@@ -42,10 +42,9 @@ import { faComments, faBullseye, faGift, faEnvelope } from '@fortawesome/free-so
         </template>
         <template #heading>What We Offer</template>
         <ul class="text-gray-700 dark:text-gray-300 list-disc list-inside">
-          <li>Thousands of conversation starters across various topics</li>
-          <li>Customizable difficulty levels for different language proficiencies</li>
+          <li>Thousands of conversation questions across various topics</li>
+          <li>Collocations, example sentences, and more for each topic.</li>
           <li>Regular updates with fresh content</li>
-          <li>Teacher resources and lesson plan ideas</li>
         </ul>
       </ContentItem>
 
@@ -56,10 +55,7 @@ import { faComments, faBullseye, faGift, faEnvelope } from '@fortawesome/free-so
         <template #heading>Get in Touch</template>
         <p class="text-gray-700 dark:text-gray-300">
           Have questions or suggestions? We'd love to hear from you! Contact us at
-          <a
-            href="mailto:info@infiniteconvo.com"
-            class="text-blue-600 dark:text-blue-400 hover:underline"
-          >
+          <a href="hello@alfiewebdev.com" class="text-blue-600 dark:text-blue-400 hover:underline">
             info@infiniteconvo.com </a
           >.
         </p>
