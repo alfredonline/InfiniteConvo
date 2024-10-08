@@ -1,3 +1,58 @@
+<script>
+import { topics } from '../data/data'
+import ContentItem from '../components/ContentContainer.vue'
+
+export default {
+  components: {
+    ContentItem
+  },
+  data() {
+    return {
+      topic: null
+    }
+  },
+  computed: {
+    topicName() {
+      return this.$route.params.topicName
+    },
+    capitalizedTopicName() {
+      return this.topicName
+        .split('-')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ')
+    },
+    questions() {
+      return this.topic?.questions || []
+    },
+    vocabulary() {
+      return this.topic?.vocabulary || []
+    },
+    summary() {
+      return this.topic?.summary || ''
+    },
+    exampleSentences() {
+      return this.topic?.exampleSentences || []
+    },
+    collocations() {
+      return this.topic?.collocations || []
+    }
+  },
+  created() {
+    this.fetchTopicData()
+  },
+  methods: {
+    fetchTopicData() {
+      console.log('Fetching topic data for:', this.topicName)
+      console.log('Available topics:', topics)
+      this.topic = topics.find(
+        (topic) => topic.title.toLowerCase() === this.topicName.toLowerCase()
+      )
+      console.log('Found topic:', this.topic)
+    }
+  }
+}
+</script>
+
 <template>
   <div class="container px-4 py-4 mx-auto mt-24 md:px-24">
     <h1 class="text-4xl font-bold mb-4">
@@ -76,58 +131,3 @@
     </div>
   </div>
 </template>
-
-<script>
-import { topics } from '../data/data'
-import ContentItem from '../components/ContentContainer.vue'
-
-export default {
-  components: {
-    ContentItem
-  },
-  data() {
-    return {
-      topic: null
-    }
-  },
-  computed: {
-    topicName() {
-      return this.$route.params.topicName
-    },
-    capitalizedTopicName() {
-      return this.topicName
-        .split('-')
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ')
-    },
-    questions() {
-      return this.topic?.questions || []
-    },
-    vocabulary() {
-      return this.topic?.vocabulary || []
-    },
-    summary() {
-      return this.topic?.summary || ''
-    },
-    exampleSentences() {
-      return this.topic?.exampleSentences || []
-    },
-    collocations() {
-      return this.topic?.collocations || []
-    }
-  },
-  created() {
-    this.fetchTopicData()
-  },
-  methods: {
-    fetchTopicData() {
-      console.log('Fetching topic data for:', this.topicName)
-      console.log('Available topics:', topics)
-      this.topic = topics.find(
-        (topic) => topic.title.toLowerCase() === this.topicName.toLowerCase()
-      )
-      console.log('Found topic:', this.topic)
-    }
-  }
-}
-</script>
