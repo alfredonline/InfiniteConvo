@@ -10,17 +10,20 @@ const toggleMenu = () => {
 </script>
 
 <template>
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-800 shadow">
     <nav class="container px-6 py-4 mx-auto flex flex-wrap justify-between items-center">
       <div class="flex items-center justify-between w-full md:w-auto">
-        <RouterLink to="/" class="text-xl font-bold text-gray-800 md:text-2xl hover:text-blue-400">
+        <RouterLink
+          to="/"
+          class="text-xl font-bold text-gray-800 dark:text-white md:text-2xl hover:text-blue-400 dark:hover:text-blue-300"
+        >
           InfiniteConvo
         </RouterLink>
         <!-- Mobile menu button -->
         <div @click="toggleMenu" class="md:hidden">
           <button
             type="button"
-            class="text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+            class="text-gray-800 dark:text-white hover:text-gray-400 dark:hover:text-gray-300 focus:outline-none focus:text-gray-400 dark:focus:text-gray-300"
           >
             <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
               <path
@@ -38,7 +41,7 @@ const toggleMenu = () => {
         <li>
           <RouterLink
             to="/"
-            class="block py-2 text-sm font-bold text-gray-800 hover:text-blue-400"
+            class="block py-2 text-sm font-bold text-gray-800 dark:text-gray-200 hover:text-blue-400 dark:hover:text-blue-300"
             @click="toggleMenu"
           >
             Home
@@ -48,7 +51,7 @@ const toggleMenu = () => {
           <RouterLink
             to="/about"
             @click="toggleMenu"
-            class="block py-2 text-sm font-bold text-gray-800 hover:text-blue-400"
+            class="block py-2 text-sm font-bold text-gray-800 dark:text-gray-200 hover:text-blue-400 dark:hover:text-blue-300"
             >About
           </RouterLink>
         </li>
@@ -56,7 +59,7 @@ const toggleMenu = () => {
           <RouterLink
             @click="toggleMenu"
             to="/topics"
-            class="block py-2 text-sm font-bold text-gray-800 hover:text-blue-400"
+            class="block py-2 text-sm font-bold text-gray-800 dark:text-gray-200 hover:text-blue-400 dark:hover:text-blue-300"
             >Topics</RouterLink
           >
         </li>
@@ -64,7 +67,7 @@ const toggleMenu = () => {
           <RouterLink
             @click="toggleMenu"
             to="/contact"
-            class="block py-2 text-sm font-bold text-gray-800 hover:text-blue-400"
+            class="block py-2 text-sm font-bold text-gray-800 dark:text-gray-200 hover:text-blue-400 dark:hover:text-blue-300"
             >Contact Us</RouterLink
           >
         </li>

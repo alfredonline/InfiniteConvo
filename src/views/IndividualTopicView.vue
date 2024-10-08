@@ -55,10 +55,10 @@ export default {
 
 <template>
   <div class="container px-4 py-4 mx-auto mt-24 md:px-24">
-    <h1 class="text-4xl font-bold mb-4">
+    <h1 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
       {{ capitalizedTopicName }}
     </h1>
-    <p class="text-xl text-gray-600 mb-8">
+    <p class="text-xl text-gray-700 dark:text-gray-200 mb-8">
       Explore this topic with our comprehensive ESL conversation materials
     </p>
 
@@ -66,14 +66,18 @@ export default {
       <!-- Summary -->
       <ContentItem>
         <template #heading>Summary</template>
-        <p class="text-gray-700">{{ summary }}</p>
+        <p class="text-gray-700 dark:text-gray-200">{{ summary }}</p>
       </ContentItem>
 
       <!-- Questions -->
       <ContentItem>
         <template #heading>Discussion Questions</template>
         <ul class="list-disc list-inside space-y-2">
-          <li v-for="(question, index) in questions" :key="index" class="text-gray-700">
+          <li
+            v-for="(question, index) in questions"
+            :key="index"
+            class="text-gray-700 dark:text-gray-200"
+          >
             {{ question }}
           </li>
         </ul>
@@ -86,7 +90,7 @@ export default {
           <span
             v-for="(word, index) in vocabulary"
             :key="index"
-            class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            class="bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-100 px-3 py-1 rounded-full text-sm"
           >
             {{ word }}
           </span>
@@ -101,14 +105,14 @@ export default {
             <li
               v-for="(sentence, index) in exampleSentences"
               :key="index"
-              class="text-gray-700 italic"
+              class="text-gray-700 dark:text-gray-200 italic"
             >
               "{{ sentence }}"
             </li>
           </ul>
         </div>
         <div v-else>
-          <p class="text-gray-700">No example sentences found for this topic.</p>
+          <p class="text-gray-700 dark:text-gray-200">No example sentences found for this topic.</p>
         </div>
       </ContentItem>
 
@@ -119,14 +123,14 @@ export default {
           <span
             v-for="(collocation, index) in collocations"
             :key="index"
-            class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm"
+            class="bg-green-100 dark:bg-green-800 text-green-800 dark:text-green-100 px-3 py-1 rounded-full text-sm"
           >
             {{ collocation }}
           </span>
         </div>
       </ContentItem>
     </div>
-    <div v-else class="text-red-500 text-center">
+    <div v-else class="text-red-500 dark:text-red-400 text-center">
       No topic data found. Topic name: {{ topicName }}
     </div>
   </div>
